@@ -1,10 +1,10 @@
 Summary:        MonoDevelop python Addin
 Name:           monodevelop-python
-Version:        2.5
-Release:        1.91%{?dist}.R
+Version:        2.8.1
+Release:        1%{?dist}.R
 License:        GPLv2+
 Group:          Development/Tools
-Source:         http://ftp.novell.com/pub/mono/sources/%{name}/%{name}-%{version}.91.tar.bz2
+Source:         http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:            http://www.monodevelop.com
 
 BuildRequires:  mono-devel >= 2.6
@@ -27,7 +27,7 @@ Group:          Development/Libraries
 Development package for %{name}
 
 %prep
-%setup -q -n %{name}-%{version}.91
+%setup -q
 ##sed magic to get rid of all of the silly $prefix/lib stuff
 find . -name Makefile -or -name Makefile.in -or -name Makefile.am -or -name configure -or -name configure.in -or -name \*.pc.in \
        -or -name \*.in -or -name \*.xml -or -name Makefile.include \
@@ -59,8 +59,8 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/monodevelop-pybinding.pc
 
 %changelog
-* Wed Oct 26 2011 - Vasiliy N. Glazov <vascom2@gmail.com> - 2.5-1.91.R
-- Update to 2.5.91
+* Wed Oct 26 2011 - Vasiliy N. Glazov <vascom2@gmail.com> - 2.8.1-1.R
+- Update to 2.8.1
 
 * Fri Jun 18 2010 - Claudio Rodrigo Pereyra Diaz <claudio@pereyradiaz.com.ar> - 2.4
 - Update upstream version
