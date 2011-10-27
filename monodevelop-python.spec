@@ -41,7 +41,7 @@ find . -name Makefile -or -name Makefile.in -or -name Makefile.am -or -name conf
 
 %build
 ./configure --prefix=%{_prefix} --bindir=%{_bindir} --datadir=%{_datadir} --libdir=%{_libdir}
-make
+make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
