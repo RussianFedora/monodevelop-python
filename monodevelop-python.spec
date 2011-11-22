@@ -1,30 +1,39 @@
-Summary:        MonoDevelop python Addin
 Name:           monodevelop-python
 Version:        2.8.1
-Release:        1%{?dist}.R
+Release:        2%{?dist}.R
+Summary:        MonoDevelop python Addin
+Summary(ru):    Дополнение Python для MonoDevelop
+
 License:        GPLv2+
 Group:          Development/Tools
 Source:         http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:            http://www.monodevelop.com
 
-BuildRequires:  mono-devel >= 2.6
-BuildRequires:  monodevelop-devel >= 2.4
+BuildRequires:  mono-devel >= 2.10
+BuildRequires:  monodevelop-devel >= %{version}
 BuildRequires:  mono-addins-devel
 BuildRequires:  gtk-sharp2-devel
 BuildRequires:  gnome-desktop-sharp-devel
-Requires:       monodevelop >= 2.4
+Requires:       monodevelop >= %{version}
 
 
 %description
 Python Addin for MonoDevelop.
 
+%description -l ru
+Биндинги Python для MonoDevelop.
+
 %package devel
 Summary:        Development files for %{name}
+Summary(ru):    Файлы разработки для %{name}
 Requires:       %{name} = %{version}-%{release} pkgconfig
 Group:          Development/Libraries
 
 %description devel
 Development package for %{name}
+
+%description devel -l ru
+Пакет разработки для %{name}
 
 %prep
 %setup -q
@@ -59,6 +68,9 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/monodevelop-pybinding.pc
 
 %changelog
+* Tue Nov 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 2.8.1-2.R
+- Added description in russian language
+
 * Wed Oct 26 2011 - Vasiliy N. Glazov <vascom2@gmail.com> - 2.8.1-1.R
 - Update to 2.8.1
 
