@@ -1,6 +1,6 @@
 Name:           monodevelop-python
 Version:        2.8.8.4
-Release:        1%{?dist}.R
+Release:        1%{?dist}
 Summary:        MonoDevelop python Addin
 Summary(ru):    Дополнение Python для MonoDevelop
 
